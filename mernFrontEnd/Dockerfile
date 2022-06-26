@@ -1,7 +1,6 @@
 FROM node:18.4.0
-WORKDIR /clinet
-COPY package.json .
-RUN npm install
+WORKDIR /usr/src/frontend
+COPY package*.json .
+RUN npm ci
 COPY . .
-EXPOSE 3000
-CMD [ "npm","run","start"]
+CMD [ "npm", "start" ]

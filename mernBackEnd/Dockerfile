@@ -1,9 +1,6 @@
-#18.4.0
 FROM node:18.4.0
-WORKDIR /server
+WORKDIR /usr/src/backend
 COPY package*.json .
-RUN npm install
+RUN npm ci
 COPY . .
-EXPOSE 3001
-CMD ["npm","run","start"]
-#image name dockermern.azurecr.io/dockermernimage .
+CMD [ "npm", "start" ]
